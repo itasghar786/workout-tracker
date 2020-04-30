@@ -1,31 +1,39 @@
 // npm packagees 
 
 const express = require ('express');
+const path = require ('path');
 const mongoose = require ('mongoose');
 const logger = require ('morgan');
+const compression = require("compression");
+
+//creating express app
+const app = express();
 
 //setting port
 
 const PORT = process.env.PORT || 3000;
 
 // set models folder to db varible 
-const db = require('./models');
+//const db = require('./models');
 
-//creating express app
-const app = express();
+
 
 //confeg middileware needed for parsing
 app.use(express.urlencoded({ extended: true}));
 app.use (express.json());
 
 // static directory
-app.use (express.static('public'));
+app.use (express.static(path.join(__dirname,"public")));
+app.use(compression());
 
 // morgan middleware
 app.use(logger('dev'));
 
+app.use(require("./routes/html-routes.js"));
+require("./routes/api-routes.js")(app);
+
 // starting db with mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout',{
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workouts',{
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
@@ -38,4 +46,8 @@ require('./routes/api-routes.js')(app);
 
 //start server to listen
 
-app.listen(PORT, () => console.log(`App running on http://localhost:%s/`, PORT));
+app.listen(PORT, ()=> {
+    console.log(
+        `Listening on port ${PORT}`
+)
+});

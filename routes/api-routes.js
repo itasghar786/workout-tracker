@@ -1,63 +1,41 @@
 // api routes
 
-// dependencies
+let Workouts = require("../models/workouts")
 
-const path = require('path');
-const Workout = require('../models/Workout');
 
-module.exports = function(app) {
-    // route to retrieve all workouts from db
-    
-app.get('/api/workouts', (req, res) => {
-    Workout.find({})
-        .then((data) => {
-            res.json(data);
+module.exports = (app) => {
+    app.post("/api/workouts", (req, res) => {
+        Workouts.create(req.body)
+        .then(dbworkouts => {
+            res.json(dbworkouts);
         })
-        .catch((err) => {
-            res.json(err);
+        .catch(err => {
+            res.status(400).json(err);
         });
-});
+    });
 
-// Get route to retrieve workouts from db that  range
-app.get('/api/workouts/range', (req, res) => {
-    Workout.find({})
+    app.get("/api/workouts", (req, res) => {
+        Workouts.find({})
+        .then(dbworkouts => {
+            res.json(dbworkouts);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+    });
+
+    app.get("/api/workouts/range", (req, res) => {
+        Workouts.find({})
         .limit(7)
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.json(err);
+        .then(dbworkouts => {
+            res.json(dbworkouts);
         });
-});
+    });
 
-// Post route to add workout to the database
-app.post('/api/workouts', (req, res) => {
-    const newWorkout = new Workout(req.body);
-    newWorkout.workoutDay();
-
-    Workout.create(newWorkout)
-        
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.json(err);
+    app.put("/api/workouts/:id", (req, res) => {
+        Workouts.findOneAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body } }, { new: true, runValidators: true })
+        .then((dbworkouts) => {
+            res.json(dbworkouts)
         });
-});
-
-// Put route to update workout to the database
-app.put('/api/workouts/:workout_id', (req, res) => {
-    Workout.findOneAndUpdate(
-        { _id: req.params.workout_id },
-        { $push: { exercises: req.body } },
-        { new: true, runValidators: true }
-    )
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.json(err);
-        });
-});
-
-};
+    });
+}
