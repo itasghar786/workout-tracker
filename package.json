@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/itasghar786/workout-tracker#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "mongoose": "^5.9.11",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {}
 }

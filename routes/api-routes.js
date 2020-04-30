@@ -1,6 +1,6 @@
 // api routes
 
-let Workouts = require("../models/workouts")
+let Workouts = require("../models/Workouts")
 
 
 module.exports = (app) => {

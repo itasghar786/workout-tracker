@@ -1,9 +1,9 @@
 // npm packagees 
 
-const express = require ('express');
-const path = require ('path');
-const mongoose = require ('mongoose');
-const logger = require ('morgan');
+const express = require ("express");
+const path = require ("path");
+const mongoose = require ("mongoose");
+const logger = require ("morgan");
 const compression = require("compression");
 
 //creating express app
@@ -16,7 +16,8 @@ const PORT = process.env.PORT || 3000;
 // set models folder to db varible 
 //const db = require('./models');
 
-
+// morgan middleware
+app.use(logger('dev'));
 
 //confeg middileware needed for parsing
 app.use(express.urlencoded({ extended: true}));
@@ -26,14 +27,12 @@ app.use (express.json());
 app.use (express.static(path.join(__dirname,"public")));
 app.use(compression());
 
-// morgan middleware
-app.use(logger('dev'));
 
 app.use(require("./routes/html-routes.js"));
 require("./routes/api-routes.js")(app);
 
 // starting db with mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workouts',{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts",{
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
@@ -41,8 +40,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workouts',{
 
 // routes
 
-require('./routes/html-routes.js')(app);
-require('./routes/api-routes.js')(app);
+//require('./routes/html-routes.js')(app);
+//require('./routes/api-routes.js')(app);
 
 //start server to listen
 
