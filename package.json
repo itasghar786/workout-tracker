@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/itasghar786/workout-tracker/issues"
   },
-  "homepage": "https://github.com/itasghar786/workout-tracker#readme"
+  "homepage": "https://github.com/itasghar786/workout-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11",
+    "morgan": "^1.10.0"
+  }
 }
