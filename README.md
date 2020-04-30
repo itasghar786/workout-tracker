@@ -30,7 +30,7 @@ To install necessary dependencies, run the following command:
 npm i
 
 Usage
-This repo uses Mongo database, Mongoose ODM, and an Express Server.
+This repo uses Mongo database, Mongoose ODM, and an Express Server..
 
 License
 This project is licensed under the MIT license.
