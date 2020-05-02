@@ -32,7 +32,7 @@ app.use(require("./routes/html-routes.js"));
 require("./routes/api-routes.js")(app);
 
 // starting db with mongoose
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds019053.mlab.com:19053/heroku_676sm5wm",{
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
