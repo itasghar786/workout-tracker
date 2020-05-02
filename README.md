@@ -1,25 +1,29 @@
-Fitness-Tracker License: MIT
-Description
-This is a fitness tracker application that uses a Mongo database, Mongoose schema(s), and handles routes with Express. Also, this application is deployed with Heroku. This application allows a user to create a new workout or continue with their last workout. The user can also add exercises and view their stats from the workout.
+**##Fitness-Tracker<h2>**
 
-User Story
+  
+##Description
 
-AS An athlete
+*This is a fitness tracker application that uses a Mongo database, Mongoose as  schema(s), and handles routes with Express. Also, this application is deployed with Heroku. This application allows a user to create a new workout or continue with their last workout. The user can also add exercises and view their stats from the workout.*
+
+**User Story**
+
+*AS An athlete
 
 I WANT to be able to create and track daily workouts
 
-SO THAT I can track my progess
+SO THAT I can track my progess*
 
 Table of Contents
 Installation
 
 Usage
 
-License
+##License: MIT
 
 Contributing
+you may contact me
 
-Tests
+
 
 Questions
 
@@ -42,4 +46,4 @@ To run tests, run the following command:
 
 npm test
 
-Questions  email me at itAsghar786@gmail.com
+**Questions  email me at itAsghar786@gmail.com**
