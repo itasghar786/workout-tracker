@@ -3,7 +3,7 @@
   
 ##Description
 
-*This is a fitness tracker application that uses a Mongo database, Mongoose as  schema(s), and handles routes with Express. Also, this application is deployed with Heroku. This application allows a user to create a new workout or continue with their last workout. The user can also add exercises and view their stats from the workout.*
+*This is a fitness tracker application that uses a Mongo database, Mongoose and  schema(s), and handles routes with Express. Also, this application is deployed with Heroku. This application allows a user to create a new workout or continue with their last workout. The user can also add exercises and view their stats from the workout.*
 
 **User Story**
 
