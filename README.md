@@ -1,4 +1,4 @@
-**##Fitness-Tracker<h2>**
+**##Fitness-Tracker<h1>**
 
   
 ##Description
