@@ -1,8 +1,6 @@
 
 * Fitness-Tracker<h1>
 
-* Fitness-Tracker<h1> 
-
 
   
 # Description
