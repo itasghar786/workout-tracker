@@ -11,7 +11,7 @@
 
 I WANT to be able to create and track daily workouts
 
-SO THAT I can track my progess*
+SO THAT I can track my progess*.
 
 Table of Contents
 Installation
